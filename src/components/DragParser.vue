@@ -5,16 +5,12 @@
   </div>
 </template>
 
-
-<script  lang="ts" >
-import EvtcParser from '../EvtcParser'
+<script >
+import EvtcParser from '../service/EvtcParser'
 export default {
-  props: {
-    msg: String,
-  },
   data() {
     return {
-      count: 0,
+
     }
   },
   methods: {
@@ -27,17 +23,14 @@ export default {
     handleDrop(e) {
       this.initParse(e.dataTransfer.files)
     },
-
     async initParse(files) {
-      if (!files || files.length == 0) {
-        return
-      }
+      if (!files || files.length == 0) return
       let file = files[0]
       var parser = new EvtcParser()
       parser.parse(file)
     },
   },
-  mounted() {},
+  mounted() { },
 }
 </script>
 <style lang="less" scoped>

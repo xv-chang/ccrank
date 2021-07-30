@@ -1,7 +1,8 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router/index'
-import vuex from './store/index'
+import router from './router'
+import vuex from './store'
+import 'vfonts/FiraCode.css'
 
 const app = createApp(App)
 

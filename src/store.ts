@@ -6,6 +6,7 @@ interface State {
 
 export default createStore({
     state: {
-        userName: '王大合'
+        ApiSkills: [],
+        ApiSpecs: []
     }
 });

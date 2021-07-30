@@ -8,41 +8,41 @@ class ReaderBuffer {
     this._offset = 0
   }
 
-  readSkip(length: number = 1) {
+  ReadSkip(length: number = 1) {
     this._offset += length
   }
 
-  readUint8(): number {
+  ReadByte(): number {
     let r = this._dataview.getUint8(this._offset)
     this._offset++
     return r
   }
-  readUint16(): number {
+  ReadUInt16(): number {
     let r = this._dataview.getUint16(this._offset, true)
     this._offset += 2
     return r
   }
-  readUint32(): number {
+  ReadUInt32(): number {
     let r = this._dataview.getUint32(this._offset, true)
     this._offset += 4
     return r
   }
-  readInt32(): number {
+  ReadInt32(): number {
     let r = this._dataview.getInt32(this._offset, true)
     this._offset += 4
     return r
   }
-  readUint64(): bigint {
+  ReadUInt64(): bigint {
     let r = this._dataview.getBigUint64(this._offset, true)
     this._offset += 8
     return r
   }
-  readInt64(): bigint {
+  ReadInt64(): bigint {
     let r = this._dataview.getBigInt64(this._offset, true)
     this._offset += 8
     return r
   }
-  readString(length: number, nullTerminated: boolean = true): string {
+  ReadString(length: number, nullTerminated: boolean = true): string {
     let bytes = new Uint8Array(this._dataview.buffer, this._offset, length)
     this._offset += length
     let decoder = new TextDecoder()
